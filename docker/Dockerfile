@@ -13,8 +13,8 @@ RUN source ~/.bash_profile
 RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 RUN rbenv install 2.3.1 && rbenv global 2.3.1
 
-# install serverspec
-RUN gem install serverspec
+# install serverspec and docker-api
+RUN gem install serverspec && gem install docker-api
 
 # install ansible
 RUN yum install -y ansible
