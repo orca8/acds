@@ -4,7 +4,7 @@ describe 'Dockerfile' do
   before(:all) do
     set :os, family: :redhat
     # Dockerfileがあるカレントディレクトリを指定
-    image = Docker::Image.build_from_dir('../../docker/')
+    image = Docker::Image.build_from_dir('../docker/')
     # docker imageの指定
     set :docker_image, image.id
   end
