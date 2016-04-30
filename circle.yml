@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t centos/6-deploy:0.1.0 ./docker/Dockerfile
+    - docker build -t centos/6-deploy:0.1.0 ./docker/
 
 test:
   override:
