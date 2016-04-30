@@ -9,4 +9,5 @@ dependencies:
 
 test:
   override:
+    - docker run centos/6-deploy:0.1.0 /bin/bash
     - cd serverspec && rake spec
