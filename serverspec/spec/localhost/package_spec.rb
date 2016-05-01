@@ -1,20 +1,12 @@
 require 'spec_helper'
 
-describe 'Dockerfile' do
-  before(:all) do
-    set :os, family: :redhat
-    # Dockerfileがあるカレントディレクトリを指定
-    image = Docker::Image.build_from_dir('../docker/')
-    # docker imageの指定
-    set :docker_image, image.id
-  end
-
+describe 'Deploy' do
   def os_version
     command('cat /etc/redhat-release').stdout
   end
 
-  it 'install version CentOS' do
-    expect(os_version).match(/CentOS/)
+  it 'install check CentOS' do
+    expect(os_version).to match(/CentOS/)
   end
 
   it 'install check ruby' do
