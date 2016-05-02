@@ -23,6 +23,3 @@ RUN gem install serverspec --no-document
 
 # install ansible
 RUN yum install -y ansible && yum clean all
-
-RUN mkdir /opt/serverspec
-ADD serverspec /opt/serverspec/

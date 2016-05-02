@@ -1,0 +1,11 @@
+# version 1
+
+# deploy
+deploy:
+  build: deploy
+  volumes:
+    - ../serverspec:/opt/serverspec
+
+# setup
+setup:
+  build: setup
