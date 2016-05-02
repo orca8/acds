@@ -5,8 +5,8 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t centos/6-deploy:0.1.0 -f docker/Dockerfile .
+    - docker-compose -f docker/docker-compose.yml build
 
 test:
   override:
-    - docker run centos/6-deploy:0.1.0 /bin/bash -c 'cd /opt/serverspec; rake spec;'
+    - docker-compose -f docker/docker-compose.yml run deploy /bin/bash -c 'cd /opt/serverspec; rake spec;'
