@@ -3,9 +3,17 @@
 # deploy
 deploy:
   build: deploy
+  container_name: deploy
   volumes:
+    - ../ansible:/opt/ansible
     - ../serverspec:/opt/serverspec
+  command : tail -f /dev/null
+  links:
+    - setup
 
 # setup
 setup:
   build: setup
+  container_name: setup
+  command : /sbin/init
+  privileged: true
