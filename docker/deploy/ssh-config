@@ -1,0 +1,3 @@
+Host setup
+  User root
+  IdentityFile /root/.ssh/id_rsa
