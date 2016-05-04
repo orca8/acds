@@ -23,3 +23,6 @@ RUN gem install serverspec --no-document
 
 # install ansible
 RUN yum install -y ansible && yum clean all
+
+# generating new ssh key
+RUN ssh-keygen -q -t rsa -b 4096 -N '' -f /root/.ssh/id_rsa

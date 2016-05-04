@@ -17,3 +17,5 @@ setup:
   container_name: setup
   command : /sbin/init
   privileged: true
+  expose:
+    - 22
