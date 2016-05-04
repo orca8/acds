@@ -10,4 +10,4 @@ dependencies:
 
 test:
   override:
-    - docker-compose -f docker/docker-compose.yml run deploy /bin/bash -c 'cd /opt/serverspec; rake spec;'
+    - docker-compose -f docker/docker-compose.yml run deploy /bin/bash --login /opt/ci.sh
