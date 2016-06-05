@@ -1,0 +1,14 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - docker info
+  - docker-compose -f docker/docker-compose.yml up -d
+  - sh setting.sh
+
+script:
+  - docker-compose -f docker/docker-compose.yml run deploy /bin/bash --login /opt/ci.sh
