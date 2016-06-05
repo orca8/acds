@@ -5,6 +5,7 @@ deploy:
   build: deploy
   container_name: deploy
   volumes:
+    - ../ci.sh:/opt/ci.sh
     - ../ansible:/opt/ansible
     - ../serverspec:/opt/serverspec
   command : tail -f /dev/null
